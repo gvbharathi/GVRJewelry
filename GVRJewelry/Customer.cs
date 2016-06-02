@@ -11,12 +11,15 @@ namespace GVRJewelry
     {
         [Key]
         public int CustomerId { get; set; }
-        public string CustomerName
-        {
-            get; set;
-        }
+        public string CustomerName{get; set;}
+        public string  CustomerEmail { get; set; }
         public string CustomerAddress { get; set; }
-        static int previousCustomerId = 0;
+ 
+        public virtual ICollection<CartItem> CartItems { get; set; }
+
+        public int previousCustomerId = 0;
+       
+
         public Customer()
         {
             CustomerId = previousCustomerId++;
